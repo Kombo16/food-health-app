@@ -44,7 +44,7 @@ disease_service = DiseasePredictionService(nutrition_service, db_service)
 def index():
     """ Serve the main HTML interface """
     try: 
-        with open(TEMPLATE_DIR/'index.html', 'r') as f:
+        with open(TEMPLATE_DIR/'index.html', 'r', encoding='utf-8') as f:
             return f.read()
     except FileNotFoundError:
         return render_template_string("""
