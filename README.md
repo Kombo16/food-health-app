@@ -40,7 +40,7 @@ A comprehensive system for analyzing food nutritional content, assessing health 
     ├── frontend/
     │   ├── static/
     │   │   ├── css/
-    │   │   │   └── organic2.css
+    │   │   │   └── style.css
     │   │   └── js/
     │   │       └── script.js
     │   └── templates/
