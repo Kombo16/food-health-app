@@ -39,6 +39,7 @@ A comprehensive system for analyzing food nutritional content, assessing health 
     │ ├── index.html
     │ ├── style.css
     │ └── script.js
+    ├── .env # To set up API and database credentials
     ├── requirements.txt # Python dependencies
     └── README.md # This file
 
