@@ -69,9 +69,9 @@ A comprehensive system for analyzing food nutritional content, assessing health 
 
         ```text
         DB_HOST=localhost
-        DB_NAME=food_doctor
-        DB_USER=root
-        DB_PASSWORD=yourpassword
+        DB_NAME=your_database_name
+        DB_USER=your_database_username
+        DB_PASSWORD=your_database_password
         DB_PORT=3306
         USDA_API_KEY=your_usda_api_key
         ```
