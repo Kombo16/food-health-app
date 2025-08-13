@@ -101,8 +101,7 @@ A comprehensive system for analyzing food nutritional content, assessing health 
     ```
 The application will be available at http://localhost:5000
 
-- Command Line Interface
-For testing and development, you can use the CLI interface:
+- Command Line Interface - For testing and development, you can use the CLI interface:
 
 ```bash
 python main.py
