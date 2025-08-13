@@ -12,36 +12,40 @@ A comprehensive system for analyzing food nutritional content, assessing health 
 - **Multiple Data Sources**: USDA API and Wikipedia fallback for nutrition data
 
 ## System Architecture
-    food-health-app/
-    ├── app.py # Main Flask application
-    ├── main.py # Command Line Interface
-    ├── config/ # Configuration files
-    │ ├── init.py
-    │ ├── database.py # Database configuration
-    │ └── settings.py # Application settings
-    ├── models/ # Data models
-    │ ├── init.py
-    │ ├── disease.py #Disease data classes
-    │ ├── nutrition.py # Nutrition data classes
-    │ └── user.py # User data classes
-    ├── services/ # Business logic services
-    │ ├── init.py
-    │ ├── database_service.py #Database operations
-    │ ├── disease_prediction_service.py # Disease predicitons
-    │ ├── nutrition_service.py # Nutrition data fetching
-    │ └── risk_assessment_service.py # Risk Calculation
-    ├── utils/ # Utility classes
-    │ ├── init.py
-    │ ├── calculations.py # Health calculation 
-    │ ├── food_categorizer.py # Food categorization
-    │ └── validators.py # Input validation
-    ├── frontend/ # Frontend assets
-    │ ├── index.html
-    │ ├── style.css
-    │ └── script.js
-    ├── .env # To set up API and database credentials
-    ├── requirements.txt # Python dependencies
-    └── README.md # This file
+   food-health-app/
+    ├── backend/
+    │   ├── app.py
+    │   ├── main.py
+    │   ├── config/
+    │   │   ├── __init__.py
+    │   │   ├── database.py
+    │   │   └── settings.py
+    │   ├── models/
+    │   │   ├── __init__.py
+    │   │   ├── disease.py
+    │   │   ├── nutrition.py
+    │   │   └── user.py
+    │   ├── services/
+    │   │   ├── __init__.py
+    │   │   ├── database_service.py
+    │   │   ├── disease_prediction_service.py
+    │   │   ├── nutrition_service.py
+    │   │   └── risk_assessment_service.py
+    │   └── utils/
+    │       ├── __init__.py
+    │       ├── calculations.py
+    │       ├── food_categorizer.py
+    │       └── validators.py
+    ├── frontend/
+    │   ├── static/
+    │   │   ├── css/
+    │   │   │   └── organic2.css
+    │   │   └── js/
+    │   │       └── script.js
+    │   └── templates/
+    │       └── index.html
+    ├── requirements.txt
+    └── README.md
 
 ## Installation
 
