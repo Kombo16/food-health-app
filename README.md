@@ -12,6 +12,7 @@ A comprehensive system for analyzing food nutritional content, assessing health 
 - **Multiple Data Sources**: USDA API and Wikipedia fallback for nutrition data
 
 ## System Architecture
+   ```
    food-health-app/
     ├── backend/
     │   ├── app.py
@@ -46,6 +47,7 @@ A comprehensive system for analyzing food nutritional content, assessing health 
     │       └── index.html
     ├── requirements.txt
     └── README.md
+   ```
 
 ## Installation
 
