@@ -3,6 +3,7 @@ from flask_cors import CORS
 import json 
 import traceback
 from datetime import datetime
+from pathlib import Path
 import os
 
 #import modular components
@@ -15,7 +16,20 @@ from services.disease_prediction_service import DiseasePredictionService
 from utils.validators import InputValidator
 
 
-app = Flask(__name__)
+BASE_DIR = Path(__file__).parent
+# Define paths to templates and static folders
+TEMPLATE_DIR = BASE_DIR.parent / 'frontend' / 'templates'
+STATIC_DIR = BASE_DIR.parent / 'frontend' / 'static'
+
+# Create folders if they don't exist
+TEMPLATE_DIR.mkdir(parents=True, exist_ok=True)
+STATIC_DIR.mkdir(parents=True, exist_ok=True)
+
+# Verify CSS and JS subdirectories exist
+(STATIC_DIR / 'css').mkdir(exist_ok=True)
+(STATIC_DIR / 'js').mkdir(exist_ok=True)
+
+app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
 CORS(app)
 
 #Initialize services
@@ -30,7 +44,7 @@ disease_service = DiseasePredictionService(nutrition_service, db_service)
 def index():
     """ Serve the main HTML interface """
     try: 
-        with open('../templates/index.html', 'r') as f:
+        with open(TEMPLATE_DIR/'index.html', 'r') as f:
             return f.read()
     except FileNotFoundError:
         return render_template_string("""
@@ -386,8 +400,6 @@ def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    # Create templates directory if it doesn't exist
-    os.makedirs('templates', exist_ok=True)
     
     print("Food Health API Server Starting...")
     print("Available endpoints:")
