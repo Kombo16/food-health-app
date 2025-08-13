@@ -1,0 +1,369 @@
+/* styles-organic-artisan.css */
+:root {
+  --primary: #3a7d44;
+  --primary-light: #4d9f5b;
+  --primary-dark: #2a5e38;
+  --secondary: #f4a261;
+  --danger: #e76f51;
+  --warning: #e9c46a;
+  --success: #2a9d8f;
+  --text: #264653;
+  --text-light: #5a7d7a;
+  --bg: #19d33534;
+  --bg-card: #fffaf0;
+  --border: #d8e2dc;
+  --shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  --texture: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.03"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="%233a3a3a"/></svg>');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+  background-image: var(--texture);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+  position: relative;
+  border-bottom: 3px solid var(--secondary);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  display: flex;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 10px;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 18px;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  text-align: center;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+  background-color: rgba(107, 142, 35, 0.1);
+}
+
+.nav-btn.active {
+  color: var(--primary);
+  background-color: rgba(107, 142, 35, 0.05);
+  font-style: italic;
+}
+
+.nav-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  background-color: var(--secondary);
+}
+
+.section {
+  padding: 30px;
+  display: none;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+  position: relative;
+}
+
+h2::before,
+h2::after {
+  content: "•";
+  color: var(--secondary);
+  margin: 0 15px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin: 30px 0 20px;
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 8px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--bg-card);
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.2);
+}
+
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 15px;
+  font-family: 'Merriweather', Georgia, serif;
+  border: 1px solid var(--primary-dark);
+  box-shadow: 3px 3px 0 var(--primary-dark);
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--primary-dark);
+}
+
+.demo-foods {
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.demo-food-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Merriweather', Georgia, serif;
+}
+
+.demo-food-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: rgba(107, 142, 35, 0.05);
+}
+
+#food-results,
+#lifestyle-results,
+#demo-results {
+  margin-top: 35px;
+  padding: 25px;
+  border-radius: 4px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Loading animation styles - Add these to your organic2.css file */
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-light);
+}
+
+.loading .spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 20px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+/* Error message styles - also missing */
+.error-message {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(231, 111, 81, 0.1);
+  border-radius: 4px;
+  border-left: 4px solid var(--danger);
+  color: var(--danger);
+}
+
+.error-message h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--danger);
+}
+
+.error-message p {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--text);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .main-nav {
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .nav-btn {
+    padding: 16px;
+    text-align: left;
+    padding-left: 25px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .nav-btn.active::after {
+    left: 0;
+    right: auto;
+    width: 4px;
+    height: 100%;
+    bottom: auto;
+    top: 0;
+  }
+  
+  h2::before,
+  h2::after {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 25px 20px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 25px 20px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h2::before,
+  h2::after {
+    display: none;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
