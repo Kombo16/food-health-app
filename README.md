@@ -86,6 +86,8 @@ A comprehensive system for analyzing food nutritional content, assessing health 
     ```bash
     python app.py
     ```
+6. **Open the browser to**:
+   ```http://localhost:5000``` 
 ## Usage:
 ### API Endpoints
 - POST /api/analyze-foods - Analyze food items
